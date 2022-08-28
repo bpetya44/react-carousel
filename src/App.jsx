@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className='container'>
-      < Carousel slides={slides} />
+      < Carousel slides={slides} controls indicators width={400}/>
     </div>
   )
 }
