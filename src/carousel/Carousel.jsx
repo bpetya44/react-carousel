@@ -1,4 +1,5 @@
 import CarouselItem from "./CarouselItem";
+import "./Carousel.css"
 
 const Carousel = ({slides}) => {
     return (
