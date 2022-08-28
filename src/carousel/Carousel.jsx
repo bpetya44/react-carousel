@@ -1,9 +1,20 @@
 import { useState, useEffect } from "react";
 import CarouselItem from "./CarouselItem";
+import CarouselControls from "./CarouselControls";
 import "./Carousel.css"
 
 const Carousel = ({slides}) => {
     const [currentSlide, setCurrentSlide] = useState(0)
+
+    //butttons
+    const prev = () =>{
+        const index = currentSlide > 0 ? currentSlide -1 : slides.length -1
+        setCurrentSlide(index)
+    }
+    const next = () =>{
+        const index = currentSlide < slides.length -1 ? currentSlide + 1 : 0
+        setCurrentSlide(index)
+    }
 
     useEffect(() => {
         const slideInterval = setInterval(() => {
@@ -24,6 +35,7 @@ const Carousel = ({slides}) => {
                 <CarouselItem slide={slide} key={index} />
             ))}
             </div>
+            <CarouselControls prev={prev} next={next} />
         </div>
     )
 };
