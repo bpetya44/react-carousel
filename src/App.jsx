@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Carousel from './carousel/Carousel'
 
 function App() {
   const slides = [
@@ -13,15 +14,7 @@ function App() {
 
   return (
     <div className='container'>
-      <div className="carousel">
-        <div className="carousel-inner">
-          {slides.map((slide, indx) => (
-            <div className="carousel-item">
-              <img src={slide} />
-            </div>
-          ))}
-        </div>
-      </div>
+      < Carousel slides={slides} />
     </div>
   )
 }
